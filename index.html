@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Contoh Ajax Simple</title>
+     <script>
+        function loadDoc() {
+             var xhttp = new XMLHttpRequest();
+             xhttp.onreadystatechange = function(){
+                    if(this.readyState == 4 && this.status == 200){
+                         document.getElementById("demo").innerHTML=
+                         this.responseText;
+                    }
+             };
+             xhttp.open("GET","ajax.txt",true);
+             xhttp.send();
+        }
+     </script>
+</head>
+<body>
+    <div id="demo">
+         <h2>The XMLHttpRequest Object</h2>
+         <p>klik tombol di bawah ini untuk mengubah kata</p>
+         <button type="button" onclick="loadDoc()">Klik Disini</button>
+    </div>
+</body>
+</html>
